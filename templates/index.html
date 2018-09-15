@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mars</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="jumbotron text-center">
+      <h1>Mission to Mars</h1>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+	  <p><a class="btn btn-primary btn-lg" href="/pictures" role="button">Click for Hemisphere photos</a></p>
+    </div>
+
+    <div class="row" id="mars_data">
+      <div class="col-md-12">
+		<h1>Latest Mars News</h1>
+		<h3><strong>{{mars.Mars_News_Titles[0]}}</strong></h3>
+		<p>{{mars.Mars_Descriptions[0]}}</p>
+      </div>
+    </div>
+	<div class="row" id="mars_data">
+      <div class="col-md-8">
+		<h2><strong>Featured Space Image</strong></h2>
+		<img src="{{mars.Featured_Space_Image}}" width= "100%" height="auto">
+      </div>
+	  <div class="col-md-4">
+		<div  style="border-style: solid; border-color: lightgrey; text-align:center;">
+		<h3><strong>Current Weather on Mars</strong></h3>
+		<p>{{mars.Latest_Mars_Weather_Tweet}}</p>
+		</div>
+		<br>
+		<div>
+		<h3><strong>Mars Facts</strong></h3>
+		<div>{{mars.Mars_Facts_HTML_Table | safe}}</div>
+      </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
+
